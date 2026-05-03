@@ -1,0 +1,603 @@
+/* ============================================================
+   InduTrain Lab — style.css
+   Project 2: Responsive Web Layout
+   Strategy: Mobile-First (base = mobile, scale up with min-width)
+   Color Theme: Professional Blue
+   ============================================================ */
+
+/* ── 1. DESIGN TOKENS ───────────────────────────────────── */
+:root {
+  --clr-primary:   #2563eb;  /* Changed from #f44336 to vibrant blue */
+  --clr-primary-dark: #1d4ed8;  /* Darker blue for hover states */
+  --clr-primary-light: #3b82f6;  /* Lighter blue for accents */
+  --clr-dark:      rgba(15, 23, 42, 0.98);
+  --clr-text:      #777;
+  --clr-white:     #fff;
+  --clr-card-bg:   #f0f9ff;  /* Changed from #fff3f3 to light blue tint */
+  --clr-accent:    #1e40af;  /* Deep blue for special elements */
+
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  6rem;
+
+  --radius:     10px;
+  --transition: 0.5s;
+}
+
+/* ── 2. RESET & BASE ────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--clr-text);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── 3. TYPOGRAPHY ──────────────────────────────────────── */
+h1 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 600;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 600;
+  margin: 0.625rem 0;
+}
+
+p {
+  color: var(--clr-text);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.375rem;
+  padding: 0.625rem;
+}
+
+/* ── 4. HEADER & HERO ───────────────────────────────────── */
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(var(--clr-dark), var(--clr-dark)),
+                    url(../assets/images/toolkit.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.text-box {
+  width: 90%;
+  color: var(--clr-white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: clamp(1.5rem, 6vw, 3.875rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.text-box p {
+  margin: 0.625rem 0 2.5rem;
+  font-size: clamp(0.8rem, 2vw, 0.875rem);
+  color: var(--clr-white);
+}
+
+/* ── 5. NAVIGATION ──────────────────────────────────────── */
+.nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav .fa-bars,
+nav .fa-times {
+  color: var(--clr-white);
+  font-size: 1.4rem;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links {
+  position: fixed;
+  background: var(--clr-primary);
+  height: 100vh;
+  width: 200px;
+  top: 0;
+  right: -200px;
+  text-align: left;
+  z-index: 100;
+  transition: right var(--transition);
+  padding-top: 3rem;
+}
+
+.nav-links.open {
+  right: 0;
+}
+
+.nav-links ul {
+  padding: 1.5rem;
+}
+
+.nav-links ul li {
+  display: block;
+  padding: 0.75rem 0;
+  position: relative;
+}
+
+.nav-links ul li::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  display: block;
+  background: var(--clr-white);
+  margin: auto;
+  transition: var(--transition);
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+
+.nav-links ul li a {
+  color: var(--clr-white);
+  font-size: 0.95rem;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+/* ── 6. LOGO STYLES ─────────────────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo a:hover {
+  transform: scale(1.02);
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.logo-text span {
+  color: var(--clr-primary);  /* Changed to blue */
+}
+
+/* ── 7. BUTTONS ─────────────────────────────────────────── */
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  color: var(--clr-white);
+  border: 1px solid var(--clr-white);
+  padding: 0.75rem 2.125rem;
+  font-size: 0.8125rem;
+  background: transparent;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.hero-btn:hover {
+  border-color: var(--clr-primary);
+  background: var(--clr-primary);
+}
+
+/* ── 8. ROW LAYOUT (Mobile-First) ───────────────────────── */
+.row {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── 9. TRAINING SYSTEMS SECTION ────────────────────────── */
+.TrainingSystems {
+  width: 90%;
+  margin-inline: auto;
+  text-align: center;
+  padding-top: var(--space-lg);
+}
+
+.TrainingSystems-col {
+  background: var(--clr-card-bg);
+  border-radius: var(--radius);
+  margin-bottom: 5%;
+  padding: 1.25rem 0.75rem;
+  transition: box-shadow var(--transition);
+}
+
+.TrainingSystems-col:hover {
+  box-shadow: 0 0 20px 0 rgba(37, 99, 235, 0.2);  /* Blue shadow on hover */
+}
+
+.TrainingSystems-col ul {
+  text-align: left;
+  padding: 0.5rem 1rem;
+}
+
+.TrainingSystems-col ul li {
+  color: var(--clr-text);
+  font-size: 0.9rem;
+  padding: 0.3rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.TrainingSystems-col ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--clr-primary);
+  font-size: 0.8rem;
+}
+
+/* ── 10. SOLUTIONS SECTION ───────────────────────────────── */
+.Solutions {
+  width: 90%;
+  margin-inline: auto;
+  text-align: center;
+  padding-top: var(--space-md);
+}
+
+.Solutions-col {
+  border-radius: var(--radius);
+  margin-bottom: 1.875rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.Solutions-col img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.layer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: var(--transition);
+}
+
+.layer:hover {
+  background: rgba(37, 99, 235, 0.85);  /* Changed to blue overlay */
+}
+
+.layer h3 {
+  width: 100%;
+  font-weight: 600;
+  color: var(--clr-white);
+  font-size: clamp(1rem, 3vw, 1.625rem);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.layer:hover h3 {
+  bottom: 49%;
+  opacity: 1;
+}
+
+/* ── 11. INDUSTRIES SECTION ─────────────────────────────── */
+.Industries {
+  width: 90%;
+  margin-inline: auto;
+  text-align: center;
+  padding-top: var(--space-lg);
+}
+
+.Industries-col {
+  border-radius: var(--radius);
+  margin-bottom: 5%;
+  text-align: left;
+}
+
+.Industries-col img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.Industries-col h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.Industries-col .fas {
+  color: var(--clr-primary);
+  font-size: 0.9rem;
+}
+
+/* ── 12. RESOURCES SECTION ───────────────────────────────── */
+.Resources {
+  width: 90%;
+  margin-inline: auto;
+  text-align: center;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.Resources-col {
+  background: var(--clr-card-bg);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: box-shadow var(--transition), transform var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.Resources-col:hover {
+  box-shadow: 0 0 20px 0 rgba(37, 99, 235, 0.15);
+  transform: translateY(-4px);
+}
+
+.Resources-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--clr-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.Resources-icon .fas {
+  color: var(--clr-white);
+  font-size: 1.75rem;
+}
+
+.Resources-col h3 {
+  color: #222;
+  font-size: 1.1rem;
+}
+
+.Resources-col p {
+  font-size: 0.9rem;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.Resources-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 0.5rem;
+  padding: 0.6rem 1.5rem;
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background var(--transition);
+}
+
+.Resources-btn:hover {
+  background: var(--clr-primary-dark);
+}
+
+/* ── 13. CONTACT SECTION ─────────────────────────────────── */
+.Contact {
+  margin: var(--space-lg) auto;
+  width: 90%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                    url(../assets/images/details.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: var(--radius);
+  text-align: center;
+  padding: var(--space-lg) 0;
+}
+
+.Contact h1 {
+  color: var(--clr-white);
+  font-size: clamp(1.25rem, 4vw, 2.25rem);
+  margin-bottom: 2.5rem;
+  padding: 0;
+}
+
+/* ── 14. FOOTER ──────────────────────────────────────────── */
+.Footer {
+  width: 100%;
+  text-align: center;
+  padding: 1.875rem 0;
+}
+
+.Footer h4 {
+  margin-bottom: 1.5625rem;
+  margin-top: 1.25rem;
+  font-weight: 600;
+}
+
+.icons .fa,
+.icons .fab {
+  color: var(--clr-primary);
+  margin: 0 0.8125rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  transition: color 0.3s ease;
+}
+
+.icons .fa:hover,
+.icons .fab:hover {
+  color: var(--clr-primary-dark);
+}
+
+/* ── 15. RESPONSIVE MEDIA QUERIES ────────────────────────── */
+
+/* Tablet: 480px and up */
+@media (min-width: 480px) {
+  .TrainingSystems,
+  .Solutions,
+  .Industries,
+  .Resources {
+    width: 85%;
+  }
+
+  .row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .TrainingSystems-col,
+  .Solutions-col,
+  .Industries-col {
+    flex-basis: 48%;
+  }
+
+  .Resources-col {
+    flex-basis: 48%;
+  }
+}
+
+/* Desktop: 768px and up */
+@media (min-width: 768px) {
+  nav .fa-bars,
+  nav .fa-times {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    background: transparent;
+    height: auto;
+    width: auto;
+    padding-top: 0;
+  }
+
+  .nav-links ul {
+    padding: 0;
+    display: flex;
+  }
+
+  .nav-links ul li {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .nav-links ul li::after {
+    background: var(--clr-primary);
+  }
+
+  .nav-links ul li a {
+    font-size: 0.8125rem;
+    min-height: auto;
+    display: inline;
+  }
+
+  .TrainingSystems-col,
+  .Industries-col,
+  .Solutions-col {
+    flex-basis: 31%;
+  }
+
+  .Resources-col {
+    flex-basis: 22%;
+  }
+
+  .TrainingSystems,
+  .Solutions,
+  .Industries,
+  .Resources,
+  .Contact {
+    width: 80%;
+  }
+}
+
+/* Large Desktop: 1024px and up */
+@media (min-width: 1024px) {
+  .nav-links ul li a {
+    font-size: 0.875rem;
+  }
+}
+
+/* ── 16. MOBILE LOGO RESPONSIVE ─────────────────────────── */
+@media (max-width: 700px) {
+  .logo-img {
+    height: 40px;
+  }
+  
+  .logo-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    display: none;
+  }
+  
+  .logo-img {
+    height: 35px;
+  }
+}
