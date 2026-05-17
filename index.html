@@ -198,12 +198,65 @@
 
     </div>
   </section>
+<!-- ===================== FORM VALIDATION ===================== -->
+<section class="FormSection" id="form">
+  <h1>Registration Form</h1>
+  <p>Fill out the form.</p>
 
-  <!-- ===================== CONTACT ===================== -->
-  <section class="Contact">
-    <h1>Get In Touch With Us</h1>
-    <a href="#" class="hero-btn">Contact Us</a>
-  </section>
+  <div class="form-container">
+    <form id="userForm">
+
+      <div class="input-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name" />
+        <small class="error"></small>
+      </div>
+
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" />
+        <small class="error"></small>
+      </div>
+
+      <!-- Password Field with Eye Button -->
+      <div class="input-group password-group">
+        <label for="password">Password</label>
+        <div class="password-wrapper">
+          <input type="password" id="password" placeholder="Enter password" />
+          <button type="button" class="password-toggle" onclick="togglePasswordVisibility('password')">
+            <i class="far fa-eye" id="passwordIcon"></i>
+          </button>
+        </div>
+        <!-- Password strength indicator as lines -->
+        <div class="password-strength-lines">
+          <div class="strength-line" id="strengthLine1"></div>
+          <div class="strength-line" id="strengthLine2"></div>
+          <div class="strength-line" id="strengthLine3"></div>
+          <div class="strength-line" id="strengthLine4"></div>
+          <div class="strength-line" id="strengthLine5"></div>
+        </div>
+        <small class="error" id="passwordError"></small>
+      </div>
+
+      <!-- Confirm Password Field with Eye Button -->
+      <div class="input-group password-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="password-wrapper">
+          <input type="password" id="confirmPassword" placeholder="Confirm your password" />
+          <button type="button" class="password-toggle" onclick="togglePasswordVisibility('confirmPassword')">
+            <i class="far fa-eye" id="confirmPasswordIcon"></i>
+          </button>
+        </div>
+        <small class="error" id="confirmError"></small>
+      </div>
+
+      <button type="submit" class="hero-btn">Submit</button>
+
+      <p id="successMessage"></p>
+
+    </form>
+  </div>
+</section>
 
   <!-- ===================== FOOTER ===================== -->
   <section class="Footer">
@@ -217,18 +270,6 @@
     </div>
   </section>
 
-  <!-- ===================== SCRIPT ===================== -->
-  <script>
-    var navLinks = document.getElementById('NavLinks');
-
-    function ShowMenu() {
-      navLinks.classList.add('open');
-    }
-
-    function HideMenu() {
-      navLinks.classList.remove('open');
-    }
-  </script>
-
+  <script src="js/script.js"></script>
 </body>
 </html>

@@ -7,14 +7,14 @@
 
 /* ── 1. DESIGN TOKENS ───────────────────────────────────── */
 :root {
-  --clr-primary:   #2563eb;  /* Changed from #f44336 to vibrant blue */
-  --clr-primary-dark: #1d4ed8;  /* Darker blue for hover states */
-  --clr-primary-light: #3b82f6;  /* Lighter blue for accents */
+  --clr-primary:   #2563eb;
+  --clr-primary-dark: #1d4ed8;
+  --clr-primary-light: #3b82f6;
   --clr-dark:      rgba(15, 23, 42, 0.98);
   --clr-text:      #777;
   --clr-white:     #fff;
-  --clr-card-bg:   #f0f9ff;  /* Changed from #fff3f3 to light blue tint */
-  --clr-accent:    #1e40af;  /* Deep blue for special elements */
+  --clr-card-bg:   #f0f9ff;
+  --clr-accent:    #1e40af;
 
   --space-sm:  1rem;
   --space-md:  2rem;
@@ -40,6 +40,7 @@ body {
   font-family: 'Poppins', sans-serif;
   color: var(--clr-text);
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 img {
@@ -81,7 +82,7 @@ p {
   min-height: 100vh;
   width: 100%;
   background-image: linear-gradient(var(--clr-dark), var(--clr-dark)),
-                    url(../assets/images/toolkit.png);
+                    url(./../assets/images/toolkit.png);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -211,7 +212,7 @@ nav .fa-times {
 }
 
 .logo-text span {
-  color: var(--clr-primary);  /* Changed to blue */
+  color: var(--clr-primary);
 }
 
 /* ── 7. BUTTONS ─────────────────────────────────────────── */
@@ -259,7 +260,7 @@ nav .fa-times {
 }
 
 .TrainingSystems-col:hover {
-  box-shadow: 0 0 20px 0 rgba(37, 99, 235, 0.2);  /* Blue shadow on hover */
+  box-shadow: 0 0 20px 0 rgba(37, 99, 235, 0.2);
 }
 
 .TrainingSystems-col ul {
@@ -316,7 +317,7 @@ nav .fa-times {
 }
 
 .layer:hover {
-  background: rgba(37, 99, 235, 0.85);  /* Changed to blue overlay */
+  background: rgba(37, 99, 235, 0.85);
 }
 
 .layer h3 {
@@ -600,4 +601,593 @@ nav .fa-times {
   .logo-img {
     height: 35px;
   }
+}
+
+/* ── 17. FORM VALIDATION SECTION ────────────────────────── */
+.FormSection {
+  width: 90%;
+  margin-inline: auto;
+  text-align: center;
+  padding: 80px 0;
+  background: #f1f5f9;
+  transition: background 0.3s ease;
+}
+
+.FormSection h1 {
+  font-size: 36px;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.FormSection > p {
+  color: #64748b;
+  margin-bottom: 40px;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: background 0.3s ease;
+}
+
+.input-group {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  transition: all 0.3s;
+  background: white;
+  color: #1e293b;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input-group input::placeholder {
+  color: #94a3b8;
+}
+
+.error {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 6px;
+  display: none;
+}
+
+#successMessage {
+  margin-top: 20px;
+  font-weight: 600;
+  display: none;
+}
+
+.FormSection .hero-btn {
+  background: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+  align-self: center;
+  width: 100%;
+}
+
+.FormSection .hero-btn:hover {
+  background: var(--clr-primary-dark);
+  border-color: var(--clr-primary-dark);
+}
+
+/* ── 18. PASSWORD STRENGTH LINES ────────────────────────── */
+.password-strength-lines {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.strength-line {
+  height: 4px;
+  flex: 1;
+  background-color: #e2e8f0;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* ── 19. EMAIL SUGGESTION ───────────────────────────────── */
+.email-suggestion {
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: #fffbeb;
+  border-left: 3px solid #f59e0b;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #92400e;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  animation: slideIn 0.3s ease;
+}
+
+.suggestion-icon {
+  font-size: 16px;
+}
+
+.suggestion-btn {
+  background: #f59e0b;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.suggestion-btn:hover {
+  background: #d97706;
+}
+
+/* ── 20. ERROR SUMMARY ──────────────────────────────────── */
+.error-summary {
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  animation: slideIn 0.3s ease;
+}
+
+.error-summary-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #991b1b;
+  font-weight: 600;
+}
+
+.error-summary-list {
+  margin: 0;
+  padding-left: 28px;
+  color: #dc2626;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ── 21. SUCCESS OVERLAY ────────────────────────────────── */
+.success-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #10b981;
+  color: white;
+  padding: 30px 50px;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 2000;
+  animation: fadeInUp 0.4s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.success-overlay.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+.success-checkmark {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-icon {
+  font-size: 35px;
+  color: #10b981;
+  font-weight: bold;
+}
+
+/* ── 22. DARK MODE TOGGLE BUTTON ────────────────────────── */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 10px 20px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.05);
+  background: #0f172a;
+}
+
+/* ── 23. DARK MODE STYLES ───────────────────────────────── */
+body.dark-mode {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark-mode .header {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.98));
+}
+
+body.dark-mode .text-box h1,
+body.dark-mode .text-box p {
+  color: white;
+}
+
+body.dark-mode .TrainingSystems h1,
+body.dark-mode .Solutions h1,
+body.dark-mode .Industries h1,
+body.dark-mode .Resources h1,
+body.dark-mode .FormSection h1,
+body.dark-mode .Contact h1 {
+  color: white;
+}
+
+body.dark-mode .TrainingSystems > p,
+body.dark-mode .Solutions > p,
+body.dark-mode .Industries > p,
+body.dark-mode .Resources > p,
+body.dark-mode .FormSection > p {
+  color: #94a3b8;
+}
+
+body.dark-mode .TrainingSystems-col,
+body.dark-mode .Resources-col,
+body.dark-mode .Industries-col {
+  background: #1e293b;
+}
+
+body.dark-mode .TrainingSystems-col ul li,
+body.dark-mode .Resources-col p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .FormSection {
+  background: #0f172a;
+}
+
+body.dark-mode .form-container {
+  background: #1e293b;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .input-group label {
+  color: #e2e8f0;
+}
+
+body.dark-mode .input-group input {
+  background: #334155;
+  border-color: #475569;
+  color: white;
+}
+
+body.dark-mode .input-group input::placeholder {
+  color: #94a3b8;
+}
+
+body.dark-mode .input-group input:focus {
+  border-color: #3b82f6;
+  background: #1e293b;
+}
+
+body.dark-mode .error {
+  color: #f87171;
+}
+
+body.dark-mode .input-group input.error-border {
+  background-color: #450a0a !important;
+  border-color: #ef4444 !important;
+}
+
+body.dark-mode .input-group input.success {
+  background-color: #064e3b !important;
+  border-color: #10b981 !important;
+}
+
+body.dark-mode #successMessage {
+  color: #34d399;
+}
+
+body.dark-mode .hero-btn {
+  border-color: #e2e8f0;
+  color: #e2e8f0;
+}
+
+body.dark-mode .hero-btn:hover {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: white;
+}
+
+body.dark-mode .Footer {
+  background: #0f172a;
+}
+
+body.dark-mode .Footer h4 {
+  color: white;
+}
+
+body.dark-mode .Footer p {
+  color: #94a3b8;
+}
+
+body.dark-mode .icons .fa,
+body.dark-mode .icons .fab {
+  color: #3b82f6;
+}
+
+body.dark-mode .Contact h1 {
+  color: white;
+}
+
+body.dark-mode .Industries-col .fas {
+  color: #fbbf24;
+}
+
+body.dark-mode .strength-line {
+  background-color: #475569;
+}
+
+body.dark-mode .email-suggestion {
+  background: #1e293b;
+  border-left-color: #f59e0b;
+  color: #fcd34d;
+}
+
+body.dark-mode .suggestion-btn {
+  background: #f59e0b;
+  color: #1e293b;
+}
+
+body.dark-mode .error-summary {
+  background: #1e293b;
+  border-left-color: #ef4444;
+}
+
+body.dark-mode .error-summary-header {
+  color: #fca5a5;
+}
+
+body.dark-mode .error-summary-list {
+  color: #f87171;
+}
+
+/* ── 24. ANIMATIONS & INTERACTIVE ELEMENTS ──────────────── */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -30%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -70%);
+  }
+}
+
+/* Toast Notifications */
+.toast-notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #1e293b;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 1000;
+  transform: translateX(400px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.toast-notification.show {
+  transform: translateX(0);
+}
+
+.toast-notification.toast-success { background: #10b981; }
+.toast-notification.toast-error { background: #ef4444; }
+.toast-notification.toast-warning { background: #f59e0b; }
+.toast-notification.toast-info { background: #3b82f6; }
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top-btn:hover {
+  background: #2563eb;
+  transform: scale(1.1);
+}
+
+/* Animate on Scroll */
+.TrainingSystems-col,
+.Solutions-col,
+.Industries-col,
+.Resources-col {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.TrainingSystems-col.animate-in,
+.Solutions-col.animate-in,
+.Industries-col.animate-in,
+.Resources-col.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Input Validation States */
+input.error-border {
+  border-color: #ef4444 !important;
+  background-color: #fef2f2 !important;
+  transition: all 0.2s ease;
+}
+
+input.success {
+  border-color: #10b981 !important;
+  background-color: #f0fdf4 !important;
+  transition: all 0.2s ease;
+}
+
+/* Form Responsive */
+@media (min-width: 768px) {
+  .FormSection {
+    width: 80%;
+  }
+  .form-container {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 1.5rem;
+  }
+  .input-group input {
+    padding: 0.8rem;
+  }
+  .success-overlay {
+    padding: 20px 30px;
+  }
+  .success-checkmark {
+    width: 40px;
+    height: 40px;
+  }
+  .check-icon {
+    font-size: 24px;
+  }
+}
+/* ===================== PASSWORD FIELD WITH EYE BUTTON ===================== */
+
+.password-group {
+    position: relative;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 50px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #64748b;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+}
+
+.password-toggle:hover {
+    color: var(--clr-primary);
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+.password-toggle:focus {
+    outline: none;
+}
+
+/* Dark mode support for password toggle */
+body.dark-mode .password-toggle {
+    color: #94a3b8;
+}
+
+body.dark-mode .password-toggle:hover {
+    color: #3b82f6;
+    background-color: rgba(59, 130, 246, 0.2);
 }
