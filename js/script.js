@@ -10,7 +10,6 @@ function HideMenu() {
     if (navLinks) navLinks.classList.remove('open');
 }
 
-// Wait for DOM to fully load
 document.addEventListener('DOMContentLoaded', function() {
     
     // ===================== FORM ELEMENTS =====================
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
     
-    console.log("✅ Form found, validation ready!");
+    console.log(" Form found, validation ready!");
 
 // ===================== PASSWORD SCANNERS (for line indicators) =====================
 
@@ -42,7 +41,6 @@ const PASSWORD_SCANNERS = [
 // ===================== UPDATE PASSWORD STRENGTH LINES =====================
 
 function updatePasswordStrengthLines(password) {
-    // Get all line elements
     const line1 = document.getElementById('strengthLine1');
     const line2 = document.getElementById('strengthLine2');
     const line3 = document.getElementById('strengthLine3');
@@ -52,7 +50,6 @@ function updatePasswordStrengthLines(password) {
     const lines = [line1, line2, line3, line4, line5];
     
     if (password === "") {
-        // Reset all lines to gray
         lines.forEach(line => {
             if (line) {
                 line.style.backgroundColor = "#e2e8f0";
@@ -62,7 +59,6 @@ function updatePasswordStrengthLines(password) {
         return;
     }
     
-    // Check each scanner and activate corresponding line
     let passedCount = 0;
     for (let i = 0; i < PASSWORD_SCANNERS.length; i++) {
         if (PASSWORD_SCANNERS[i].pattern.test(password)) {
@@ -79,7 +75,6 @@ function updatePasswordStrengthLines(password) {
         }
     }
     
-    // Change line colors based on overall strength
     if (passedCount <= 2) {
         lines.forEach(line => {
             if (line && line.style.backgroundColor === "#10b981") {
@@ -370,10 +365,8 @@ if (passwordInput) {
         const password = passwordInput.value;
         const result = validateStrongPassword(password);
         
-        // Update password strength lines
         updatePasswordStrengthLines(password);
         
-        // Update password validation message
         const passwordError = document.getElementById('passwordError');
         if (password === "") {
             showError(passwordInput, "Password is required", 'passwordError');
@@ -384,7 +377,6 @@ if (passwordInput) {
             showSuccess(passwordInput, 'passwordError');
         }
         
-        // Also validate confirm password when password changes
         if (confirmPasswordInput && confirmPasswordInput.value !== "") {
             const confirmResult = validateConfirmPassword(password, confirmPasswordInput.value);
             if (!confirmResult.valid) {
@@ -434,7 +426,6 @@ if (form) {
             console.log("✅ Name: APPROVED");
         }
 
-        // Email Validation
         const emailResult = validateEmail(emailInput ? emailInput.value : '');
         if (!emailResult.valid) {
             if (emailInput) showError(emailInput, emailResult.message);
@@ -446,7 +437,6 @@ if (form) {
             console.log("✅ Email: APPROVED");
         }
 
-        // Password Validation
         const passwordResult = validatePassword(passwordInput ? passwordInput.value : '');
         if (!passwordResult.valid) {
             if (passwordInput) showError(passwordInput, passwordResult.message, 'passwordError');
@@ -458,7 +448,6 @@ if (form) {
             console.log("✅ Password: APPROVED");
         }
 
-        // Confirm Password Validation
         const confirmResult = validateConfirmPassword(
             passwordInput ? passwordInput.value : '',
             confirmPasswordInput ? confirmPasswordInput.value : ''
@@ -474,9 +463,6 @@ if (form) {
         }
 
         if (!isValid) {
-            console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-            console.log("❌ VALIDATION FAILED - Submission BLOCKED");
-            console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
             showErrorSummary(errors);
             if (successMessage) {
                 successMessage.textContent = "❌ Please fix the errors above before submitting.";

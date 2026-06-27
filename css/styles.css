@@ -1,11 +1,3 @@
-/* ============================================================
-   InduTrain Lab — style.css
-   Project 2: Responsive Web Layout
-   Strategy: Mobile-First (base = mobile, scale up with min-width)
-   Color Theme: Professional Blue
-   ============================================================ */
-
-/* ── 1. DESIGN TOKENS ───────────────────────────────────── */
 :root {
   --clr-primary:   #2563eb;
   --clr-primary-dark: #1d4ed8;
@@ -25,7 +17,6 @@
   --transition: 0.5s;
 }
 
-/* ── 2. RESET & BASE ────────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
@@ -57,7 +48,6 @@ a {
   color: inherit;
 }
 
-/* ── 3. TYPOGRAPHY ──────────────────────────────────────── */
 h1 {
   font-size: clamp(1.5rem, 4vw, 2.25rem);
   font-weight: 600;
@@ -77,7 +67,6 @@ p {
   padding: 0.625rem;
 }
 
-/* ── 4. HEADER & HERO ───────────────────────────────────── */
 .header {
   min-height: 100vh;
   width: 100%;
@@ -110,7 +99,6 @@ p {
   color: var(--clr-white);
 }
 
-/* ── 5. NAVIGATION ──────────────────────────────────────── */
 .nav {
   display: flex;
   padding: 2% 6%;
@@ -180,7 +168,6 @@ nav .fa-times {
   align-items: center;
 }
 
-/* ── 6. LOGO STYLES ─────────────────────────────────────── */
 .logo {
   display: flex;
   align-items: center;
@@ -215,7 +202,6 @@ nav .fa-times {
   color: var(--clr-primary);
 }
 
-/* ── 7. BUTTONS ─────────────────────────────────────────── */
 .hero-btn {
   display: inline-flex;
   align-items: center;
@@ -235,7 +221,6 @@ nav .fa-times {
   background: var(--clr-primary);
 }
 
-/* ── 8. ROW LAYOUT (Mobile-First) ───────────────────────── */
 .row {
   margin-top: 5%;
   display: flex;
@@ -243,7 +228,6 @@ nav .fa-times {
   gap: 1.25rem;
 }
 
-/* ── 9. TRAINING SYSTEMS SECTION ────────────────────────── */
 .TrainingSystems {
   width: 90%;
   margin-inline: auto;
@@ -284,7 +268,6 @@ nav .fa-times {
   font-size: 0.8rem;
 }
 
-/* ── 10. SOLUTIONS SECTION ───────────────────────────────── */
 .Solutions {
   width: 90%;
   margin-inline: auto;
@@ -338,7 +321,6 @@ nav .fa-times {
   opacity: 1;
 }
 
-/* ── 11. INDUSTRIES SECTION ─────────────────────────────── */
 .Industries {
   width: 90%;
   margin-inline: auto;
@@ -370,7 +352,6 @@ nav .fa-times {
   font-size: 0.9rem;
 }
 
-/* ── 12. RESOURCES SECTION ───────────────────────────────── */
 .Resources {
   width: 90%;
   margin-inline: auto;
@@ -442,7 +423,6 @@ nav .fa-times {
   background: var(--clr-primary-dark);
 }
 
-/* ── 13. CONTACT SECTION ─────────────────────────────────── */
 .Contact {
   margin: var(--space-lg) auto;
   width: 90%;
@@ -462,7 +442,6 @@ nav .fa-times {
   padding: 0;
 }
 
-/* ── 14. FOOTER ──────────────────────────────────────────── */
 .Footer {
   width: 100%;
   text-align: center;
@@ -493,9 +472,6 @@ nav .fa-times {
   color: var(--clr-primary-dark);
 }
 
-/* ── 15. RESPONSIVE MEDIA QUERIES ────────────────────────── */
-
-/* Tablet: 480px and up */
 @media (min-width: 480px) {
   .TrainingSystems,
   .Solutions,
@@ -521,7 +497,6 @@ nav .fa-times {
   }
 }
 
-/* Desktop: 768px and up */
 @media (min-width: 768px) {
   nav .fa-bars,
   nav .fa-times {
@@ -575,14 +550,12 @@ nav .fa-times {
   }
 }
 
-/* Large Desktop: 1024px and up */
 @media (min-width: 1024px) {
   .nav-links ul li a {
     font-size: 0.875rem;
   }
 }
 
-/* ── 16. MOBILE LOGO RESPONSIVE ─────────────────────────── */
 @media (max-width: 700px) {
   .logo-img {
     height: 40px;
@@ -603,7 +576,6 @@ nav .fa-times {
   }
 }
 
-/* ── 17. FORM VALIDATION SECTION ────────────────────────── */
 .FormSection {
   width: 90%;
   margin-inline: auto;
@@ -694,8 +666,6 @@ nav .fa-times {
   background: var(--clr-primary-dark);
   border-color: var(--clr-primary-dark);
 }
-
-/* ── 18. PASSWORD STRENGTH LINES ────────────────────────── */
 .password-strength-lines {
   display: flex;
   gap: 8px;
@@ -710,8 +680,6 @@ nav .fa-times {
   border-radius: 4px;
   transition: all 0.3s ease;
 }
-
-/* ── 19. EMAIL SUGGESTION ───────────────────────────────── */
 .email-suggestion {
   margin-top: 8px;
   padding: 10px 12px;
@@ -746,8 +714,6 @@ nav .fa-times {
 .suggestion-btn:hover {
   background: #d97706;
 }
-
-/* ── 20. ERROR SUMMARY ──────────────────────────────────── */
 .error-summary {
   background: #fef2f2;
   border-left: 4px solid #ef4444;
@@ -774,7 +740,6 @@ nav .fa-times {
   line-height: 1.6;
 }
 
-/* ── 21. SUCCESS OVERLAY ────────────────────────────────── */
 .success-overlay {
   position: fixed;
   top: 50%;
@@ -811,7 +776,6 @@ nav .fa-times {
   font-weight: bold;
 }
 
-/* ── 22. DARK MODE TOGGLE BUTTON ────────────────────────── */
 .dark-mode-toggle {
   position: fixed;
   top: 20px;
@@ -835,7 +799,6 @@ nav .fa-times {
   background: #0f172a;
 }
 
-/* ── 23. DARK MODE STYLES ───────────────────────────────── */
 body.dark-mode {
   background-color: #0f172a;
   color: #e2e8f0;
@@ -911,13 +874,13 @@ body.dark-mode .error {
 }
 
 body.dark-mode .input-group input.error-border {
-  background-color: #450a0a !important;
-  border-color: #ef4444 !important;
+  background-color: #450a0a ;
+  border-color: #ef4444 ;
 }
 
 body.dark-mode .input-group input.success {
-  background-color: #064e3b !important;
-  border-color: #10b981 !important;
+  background-color: #064e3b ;
+  border-color: #10b981 ;
 }
 
 body.dark-mode #successMessage {
@@ -988,7 +951,6 @@ body.dark-mode .error-summary-list {
   color: #f87171;
 }
 
-/* ── 24. ANIMATIONS & INTERACTIVE ELEMENTS ──────────────── */
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -1022,7 +984,6 @@ body.dark-mode .error-summary-list {
   }
 }
 
-/* Toast Notifications */
 .toast-notification {
   position: fixed;
   bottom: 30px;
@@ -1048,7 +1009,6 @@ body.dark-mode .error-summary-list {
 .toast-notification.toast-warning { background: #f59e0b; }
 .toast-notification.toast-info { background: #3b82f6; }
 
-/* Scroll to Top Button */
 .scroll-top-btn {
   position: fixed;
   bottom: 30px;
@@ -1078,7 +1038,6 @@ body.dark-mode .error-summary-list {
   transform: scale(1.1);
 }
 
-/* Animate on Scroll */
 .TrainingSystems-col,
 .Solutions-col,
 .Industries-col,
@@ -1096,9 +1055,8 @@ body.dark-mode .error-summary-list {
   transform: translateY(0);
 }
 
-/* Input Validation States */
 input.error-border {
-  border-color: #ef4444 !important;
+  border-color: #ef4444 ;
   background-color: #fef2f2 !important;
   transition: all 0.2s ease;
 }
@@ -1109,7 +1067,6 @@ input.success {
   transition: all 0.2s ease;
 }
 
-/* Form Responsive */
 @media (min-width: 768px) {
   .FormSection {
     width: 80%;
@@ -1137,8 +1094,6 @@ input.success {
     font-size: 24px;
   }
 }
-/* ===================== PASSWORD FIELD WITH EYE BUTTON ===================== */
-
 .password-group {
     position: relative;
 }
@@ -1182,7 +1137,6 @@ input.success {
     outline: none;
 }
 
-/* Dark mode support for password toggle */
 body.dark-mode .password-toggle {
     color: #94a3b8;
 }
